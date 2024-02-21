@@ -1,6 +1,4 @@
 import ForgetForm from "@/components/forms/auth/forgetForm";
-import ResetForm from "@/components/forms/auth/resetForm";
-import Layout from "@/layout";
 import { getSession } from "next-auth/react";
 import Head from "next/head";
 import Image from "next/image";
@@ -9,8 +7,8 @@ import React from "react";
 
 const index = (props) => {
   return (
-    <Layout>
-        <Head>
+    <>
+      <Head>
         <title>{props.title}</title>
         <meta name="description" content="Your eCommerce Website Description" />
         <meta name="keywords" content="ecommerce, online shopping, Forget Password" />
@@ -35,7 +33,7 @@ const index = (props) => {
               Reset your password.
             </h2>
           </div>
-<ForgetForm/>
+          <ForgetForm />
           <p className="mt-6 text-center text-[15px] leading-loose text-gray-500 md:mt-7 lg:mt-9 lg:text-base">
             Don’t want to reset?
             <Link
@@ -47,7 +45,7 @@ const index = (props) => {
           </p>
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 

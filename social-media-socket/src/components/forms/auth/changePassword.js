@@ -1,19 +1,22 @@
 "use client";
-import PasswordField from "@/components/global/fields/PasswordField";
-import { useAuthContext } from "@/context/AuthContext";
-import { post } from "@/lib/network/http";
+import { post } from "@/utils/lib/network/http";
+import { notifySuccess } from "@/utils/notify/notice";
+import { resetPasswordValidation } from "@/utils/validation/validationSchema";
+// import PasswordField from "@/components/global/fields/PasswordField";
+// import { useAuthContext } from "@/context/AuthContext";
+// import { post } from "@/lib/network/http";
 
-import { useAxios } from "@/lib/network/interceptors";
-import { notifySuccess } from "@/lib/notify/notification";
+// import { useAxios } from "@/lib/network/interceptors";
+// import { notifySuccess } from "@/lib/notify/notification";
 
-import { resetPasswordValidation } from "@/utils/validation/validation";
-import { KeyboardArrowRight } from "@mui/icons-material";
+// import { resetPasswordValidation } from "@/utils/validation/validation";
+// import { KeyboardArrowRight } from "@mui/icons-material";
 import { useFormik } from "formik";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const ChangePassword = () => {
-  const { handleLoginAuth, user, userId } = useAuthContext();
+  // const { handleLoginAuth, user, userId } = useAuthContext();
   const router = useRouter();
 
   const [error, setError] = useState(undefined);
