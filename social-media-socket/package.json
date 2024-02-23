@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
+    "@heroicons/react": "^2.1.1",
     "axios": "^1.6.7",
     "countries-list": "^3.0.6",
     "country-state-city": "^3.2.1",

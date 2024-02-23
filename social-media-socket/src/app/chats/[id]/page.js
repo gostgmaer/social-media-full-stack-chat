@@ -1,8 +1,12 @@
+import Layout from '@/components/global/layout'
+import SingleChat from '@/components/pages/chats/single'
 import React from 'react'
 
 const Page = () => {
   return (
-    <div>Page</div>
+    <Layout>
+      <SingleChat></SingleChat>
+    </Layout>
   )
 }
 
