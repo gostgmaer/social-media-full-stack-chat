@@ -5,15 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const index = (props) => {
+const Index = (props) => {
   return (
     <>
-      <Head>
-        <title>{props.title}</title>
+      {/* <Head>
+        <title>{"Reset your password"}</title>
         <meta name="description" content="Your eCommerce Website Description" />
         <meta name="keywords" content="ecommerce, online shopping, Forget Password" />
         <meta name="author" content="Kishor Sarkar" />
-      </Head>
+      </Head> */}
       <div className="flex w-full flex-col justify-center px-5">
         <div className="mx-auto w-full max-w-md py-12 md:max-w-lg lg:max-w-xl 2xl:pb-8 2xl:pt-2">
           <div className="flex flex-col items-center">
@@ -33,12 +33,12 @@ const index = (props) => {
               Reset your password.
             </h2>
           </div>
-          <ForgetForm />
+          {/* <ForgetForm /> */}
           <p className="mt-6 text-center text-[15px] leading-loose text-gray-500 md:mt-7 lg:mt-9 lg:text-base">
             Don’t want to reset?
             <Link
               className="font-semibold text-gray-700 transition-colors hover:text-primary ml-1"
-              href="/auth/signin"
+              href="/"
             >
               Sign in
             </Link>
@@ -49,22 +49,22 @@ const index = (props) => {
   );
 };
 
-export default index;
+export default Index;
 
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
 
-  if (session) {
-    return {
-      redirect: {
-        destination: '/',
-        permanent: false,
-      }
-    }
-  } else {
-    return {
-      props: { title: "Ecommerce Reset your password" }
-    }
-  }
-}
+//   if (session) {
+//     return {
+//       redirect: {
+//         destination: '/',
+//         permanent: false,
+//       }
+//     }
+//   } else {
+//     return {
+//       props: { title: "Ecommerce Reset your password" }
+//     }
+//   }
+// }

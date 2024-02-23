@@ -72,12 +72,12 @@ const RegisterForm = () => {
           <Input label={"Email Address"} type={"email"} additionalAttrs={{ ...formik.getFieldProps('email'), placeholder: "infos@mail.com" }} classes={undefined} icon={undefined} id={'email'} />
         </div>
 
-        <div className="col-span-full sm:col-span-1 ">
+        <div className="col-span-full ">
           <Input label={"Password"} type={"password"} additionalAttrs={{ ...formik.getFieldProps('password'), placeholder: "Password" }} classes={undefined} icon={undefined} id={'password'} />
         </div>
-        <div className="col-span-full sm:col-span-1 ">
+        {/* <div className="col-span-full sm:col-span-1 ">
           <Input label={"Confirm Password"} type={"password"} additionalAttrs={{ ...formik.getFieldProps('confirmPassword'), placeholder: "Confirm Pass" }} classes={undefined} icon={undefined} id={'confirmPassword'} />
-        </div>
+        </div> */}
         <div className="col-span-full mt-2 ">
           <label className="rizzui-checkbox-container flex flex-row items-center">
             <span className="relative leading-none">
