@@ -1,14 +1,16 @@
 
 "use client";
-import { useAuthContext } from "@/context/AuthContext";
-import { post } from "@/lib/network/http";
-import { useAxios } from "@/lib/network/interceptors";
+import { post } from "@/utils/lib/network/http";
+import { useAxios } from "@/utils/lib/network/interceptors";
+// import { useAuthContext } from "@/context/AuthContext";
+// import { post } from "@/lib/network/http";
+// import { useAxios } from "@/lib/network/interceptors";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const ConfirmForm = () => {
-  const { handleLoginAuth, user, userId } = useAuthContext();
+  // const { handleLoginAuth, user, userId } = useAuthContext();
   const router = useRouter();
   const [axios, spinner] = useAxios();
   const [userData, setUserData] = useState(undefined);
@@ -47,7 +49,7 @@ const ConfirmForm = () => {
           services.
         </p>
       </div>
-      {spinner}
+      {/* {spinner} */}
     </div>
   );
 };

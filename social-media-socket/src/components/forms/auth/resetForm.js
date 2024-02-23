@@ -1,13 +1,15 @@
 "use client";
-import PasswordField from "@/components/global/fields/PasswordField";
-import { useAuthContext } from "@/context/AuthContext";
-import { post } from "@/lib/network/http";
+import { post } from "@/utils/lib/network/http";
+import { resetPasswordValidation } from "@/utils/validation/validationSchema";
+// import PasswordField from "@/components/global/fields/PasswordField";
+// import { useAuthContext } from "@/context/AuthContext";
+// import { post } from "@/lib/network/http";
 
 
-import { useAxios } from "@/lib/network/interceptors";
+// import { useAxios } from "@/lib/network/interceptors";
 
-import { resetPasswordValidation } from "@/utils/validation/validation";
-import { KeyboardArrowRight } from "@mui/icons-material";
+// import { resetPasswordValidation } from "@/utils/validation/validation";
+// import { KeyboardArrowRight } from "@mui/icons-material";
 import { useFormik } from "formik";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -15,10 +17,10 @@ import React, { useEffect, useState } from "react";
 
 const ResetForm = () => {
 
-  const { handleLoginAuth, user, userId } = useAuthContext();
+  // const { handleLoginAuth, user, userId } = useAuthContext();
   const router = useRouter();
 
-  const [axios, spinner] = useAxios();
+  // const [axios, spinner] = useAxios();
   const [error, setError] = useState(undefined);
   const param = useSearchParams();
 
@@ -38,11 +40,11 @@ const ResetForm = () => {
     }
   };
 
-  useEffect(() => {
-    if (userId) {
-      router.push("/dashboard");
-    }
-  }, [userId]);
+  // useEffect(() => {
+  //   if (userId) {
+  //     router.push("/dashboard");
+  //   }
+  // }, [userId]);
 
 
 
@@ -97,7 +99,7 @@ const ResetForm = () => {
           disabled={!formik.isValid}
         >
           <span>Confirm Password</span>{" "}
-      <KeyboardArrowRight/>
+      {/* <KeyboardArrowRight/> */}
         </button>
       </div>
       {error && (
