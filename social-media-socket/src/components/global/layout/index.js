@@ -10,7 +10,7 @@ export default function Layout({ children }) {
   return (
     <div>
       <Header />
-      <main className=' min-h-screen'>
+      <main className=' min-h-[calc(100vh-64px)]'>
         {children}
       </main>
 
