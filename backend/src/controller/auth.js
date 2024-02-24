@@ -4,12 +4,12 @@ const {
     getReasonPhrase,
     getStatusCode,
   } = require("http-status-codes");
-  const { jwtSecret, refressSecret, loginPath, host, confirmPath, applicaionName } = require("../../config/setting");
-  const User = require("../../models/user");
+  const { jwtSecret, refressSecret, loginPath, host, confirmPath, applicaionName } = require("../config/setting");
+  const User = require("../models/user");
   const jwt = require("jsonwebtoken");
   const bcrypt = require("bcrypt");
-  const createMailOptions = require("../../mail/mailOptions");
-  const transporter = require("../../mail/mailTransporter");
+  const createMailOptions = require("../mail/mailOptions");
+  const transporter = require("../mail/mailTransporter");
   
   const register = async (req, res) => {
     var { firstName, lastName, email, password, username } = req.body;

@@ -31,6 +31,7 @@
     "mailgen": "^2.0.28",
     "mongoose": "^8.1.2",
     "nodemailer": "^6.9.9",
+    "nodemailer-mandrill-transport": "^1.2.0",
     "nodemon": "^3.0.3",
     "uuid": "^9.0.1"
   }
