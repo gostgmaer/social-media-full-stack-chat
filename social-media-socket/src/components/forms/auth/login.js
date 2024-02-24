@@ -36,11 +36,11 @@ const LoginForm = () => {
 
             route.push(decodedCallbackUrl);
           } else {
-            route.push("/dashboard");
+            route.push("/chats");
           }
 
         } else {
-          route.push("/home");
+          route.push("/");
         }
       } else {
    
