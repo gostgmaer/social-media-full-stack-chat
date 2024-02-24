@@ -4,8 +4,8 @@ const {
     getReasonPhrase,
     getStatusCode,
   } = require("http-status-codes");
-  const User = require("../../models/user");
-  const { FilterOptions } = require("../../utils/service");
+  const User = require("../models/user");
+  const { FilterOptions } = require("../utils/lib/services/service");
   
   const getusers = async (req, res) => {
     try {

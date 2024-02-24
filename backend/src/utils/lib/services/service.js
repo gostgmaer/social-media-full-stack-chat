@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const axios = require("axios"); // You may need to install axios
-const { jwtSecret, authHost } = require("../config/setting");
+const { jwtSecret, authHost } = require("../../../config/setting");
 const { jwtDecode } = require("jwt-decode");
 
 function getAppIdAndEntity(url) {

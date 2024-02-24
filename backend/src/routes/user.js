@@ -9,7 +9,7 @@ const {
   getusers,
   deleteUser,
   getSingleUser,
-} = require("../controller/user/controller");
+} = require("../controller/user");
 
 userRouter.route("/users").get(adminMiddleware, getusers);
 userRouter.route("/users/:id").get(userMiddleWare, getSingleUser);
