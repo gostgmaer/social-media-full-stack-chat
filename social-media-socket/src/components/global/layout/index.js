@@ -10,9 +10,9 @@ export default function Layout({ children }) {
   return (
     <div>
       <Header />
-      <main className=' min-h-[calc(100vh-64px)]'>
+      <div className=' min-h-[calc(100vh-64px)]'>
         {children}
-      </main>
+      </div>
 
     </div>
   )
