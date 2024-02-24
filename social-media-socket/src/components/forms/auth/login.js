@@ -5,6 +5,7 @@ import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { loginValidationSchema } from "@/utils/validation/validationSchema";
 import Input from "@/components/global/fields/input";
+import { notifyerror } from "@/utils/notify/notice";
 
 const LoginForm = () => {
 
@@ -18,25 +19,32 @@ const LoginForm = () => {
     },
     validationSchema: loginValidationSchema,
     onSubmit: async (values) => {
-
-      // handleLoginAuth(values)
-
       const res = await signIn("credentials", {
         redirect: false,
         ...values,
       });
+
       if (res.ok) {
         if (res.url) {
           const parsedUrl = new URL(res.url);
           const callbackUrlParam = parsedUrl.searchParams.get("callbackUrl");
-          const decodedCallbackUrl = callbackUrlParam
-            ? decodeURIComponent(callbackUrlParam)
-            : "/";
 
-          route.push(decodedCallbackUrl);
+          if (callbackUrlParam) {
+            const decodedCallbackUrl = callbackUrlParam
+              ? decodeURIComponent(callbackUrlParam)
+              : "/";
+
+            route.push(decodedCallbackUrl);
+          } else {
+            route.push("/dashboard");
+          }
+
         } else {
           route.push("/home");
         }
+      } else {
+   
+       notifyerror(res.error,5000)
       }
     },
   });

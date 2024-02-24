@@ -14,7 +14,7 @@ const ChangePassword = () => {
 
   const handleSubmit = async (values) => {
     try {
-      const reset = await post(`/user/auth/change-password`, {
+      const reset = await post(`/user/authentication/change-password`, {
         password: values.password,
       });
       if (reset.status == "OK") {
