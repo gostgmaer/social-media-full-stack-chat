@@ -61,7 +61,7 @@ export const RightContainer = (props) => {
                 <div className="col-span-full text-black bg-white py-2 px-5 rounded-md flex justify-between items-center h-16 ">
                     <h4 className=" text-2xl">Kishor Sarkar</h4>
 
-                    <button className="py-2 px-5 rounded-md bg-gray-600 text-white">New Group</button>
+                   
                 </div>
                 <div className="col-span-full p-5 flex flex-col justify-between gap-5 items-start ">
                     <div className="col-span-full min-h-[calc(100vh-272px)]  ">
@@ -72,7 +72,7 @@ export const RightContainer = (props) => {
 
                         </div>
                     </div>
-                </div></>:<div className=" col-span-full flex  justify-center items-center h-full w-full">No Chat is Selected</div>}
+                </div></> : <div className=" col-span-full flex  justify-center items-center h-full w-full flex-col gap-20"> <button className="py-2 px-5 rounded-md bg-gray-300 text-gray-800">New Group</button> No Chat is Selected</div>}
 
         </div>
     );
