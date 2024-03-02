@@ -112,38 +112,38 @@ export const AuthContextProvider = ({ children }) => {
   //   }
   // };
 
-  const getToken = async () => {
-    try {
-      const refreshToken = Cookies.get("refreshToken");
-      if (refreshToken) {
-        const res = await post("/user/authentication/token/refersh", {
-          token: refreshToken,
-        });
-        const decoded = jwtDecode(res.access_token);
-        setToken(
-          "accessToken",
-          res.access_token,
-          decoded["exp"],
-          "ACCESS_TOKEN"
-        );
-        setUserId(decoded);
-      }
-    } catch (error) {
-      setUser(undefined);
-      setUserId(undefined);
+  // const getToken = async () => {
+  //   try {
+  //     const refreshToken = Cookies.get("refreshToken");
+  //     if (refreshToken) {
+  //       const res = await post("/user/authentication/token/refersh", {
+  //         token: refreshToken,
+  //       });
+  //       const decoded = jwtDecode(res.access_token);
+  //       setToken(
+  //         "accessToken",
+  //         res.access_token,
+  //         decoded["exp"],
+  //         "ACCESS_TOKEN"
+  //       );
+  //       setUserId(decoded);
+  //     }
+  //   } catch (error) {
+  //     setUser(undefined);
+  //     setUserId(undefined);
      
-    }
-  };
+  //   }
+  // };
 
   // React.useEffect(() => {
   //   unsubscribe();
   // }, []);
 
-  useEffect(() => {
-    const tokenRefreshInterval = setInterval(getToken, 10 * 60 * 1000);
+  // useEffect(() => {
+  //   const tokenRefreshInterval = setInterval(getToken, 10 * 60 * 1000);
 
-    return () => clearInterval(tokenRefreshInterval);
-  }, []);
+  //   return () => clearInterval(tokenRefreshInterval);
+  // }, []);
 
   return (
     <AuthContext.Provider
